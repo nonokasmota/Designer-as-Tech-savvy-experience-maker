@@ -429,7 +429,7 @@ function overlayAction() {
   });
 
   const overlayButton = document.getElementById('overlay-button');
-  overlayButton.textContent = overlays[0].style.color === 'none' ? 'Open[A]' : 'Close[A]';
+  overlayButton.textContent = overlays[0].style.display === 'none' ? 'Open[A]' : 'Close[A]';
 }
 
 
