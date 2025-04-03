@@ -15,73 +15,70 @@
   <video id="webcam" autoplay muted playsinline></video>
 
   <div id="overlay">
-    <div id="overlayToHide"></div>
-    <div>
+    <div class="overlayToHide">
       <p>#Designer-as-a-tech-savvy-experience-maker</p>
       <p>Ana_Mota</p>
     </div>
-    <div>
+    <div class="overlayToHide">
       <p>Ubiquity://Simulation://Structure</p>
       <p>[<span id="ip-address">YOUR.IP.ADRESS</span>]</p>
     </div>
-    <div>
+    <div class="overlayToHide">
       <div class="small">
         <p>Camera[<span id="camera-status">NA</span>]</p>
         <p>Mic[<span id="mic-status">NA</span>]</p>
       </div>
       <p>(Status) > Loading...</p>
     </div>
-    <div>
-      <div class="small">
+    <div class="overlayToHide">
+      <div class="small ">
         <p>><span id="os-info">OS.NA</span></p>
         <p>{<span id="device-info">DEVICE.NA</span>}</p>
         <p>*<span id="browser-info">BROWSER.NA</span></p>
       </div>
       <p>(<span id="screen-size">WIDTH*HEIGHT</span>)</p>
     </div>
-    <div>
+    <div class="overlayToHide">
       <p>XYZ = <span id="cursor-position">X / Y</span> / <span id="face-distance">Z</span></p>
     </div>
-    <div>
+    <div class="overlayToHide">
       <p>Rotation(<span id="face-rotation"></span>rad)</p>
     </div>
-    <div>
+    <div class="overlayToHide">
       <p>Facing = <span id="right-left"></span>;</p>
       <p>: <span id="recall-invent">Analyzing...</span></p>
     </div>
-    <div>
+    <div class="overlayToHide">
       <p>Noise_Level = <span id="noise-level"></span>;</p>
       <p>: <span id="silent-talking">Analyzing...</span></p>
     </div>
-    <div>
+    <div class="overlayToHide">
       <p>Closeness = <span id="closeness-level"></span>;</p>
       <p>: <span id="good-bad-sight">Analyzing...</span></p>
     </div>
-    <div>
+    <div class="overlayToHide">
       <p>> <span id="clock">YYYYMMDD_hhmmssxx</span>;</p>
       <p>: <span id="time-of-day">Analyzing...</span> (<span id="time-spent">NA</span>)</p>
     </div>
-    <div>
+    <div class="overlayToHide">
       <p>WPM = <span id="wpm">!Input</span>;</p>
       <p>: <span id="knowledge">Analyzing...</span>
     </div>
-    <div>
+    <div class="overlayToHide">
       <div class="one-liner">
         <p>Typing_Test: </p><input type="text" id="dynamicInput" placeholder="_">
       </div>
     </div>
-    <div>
-      <p>(LOG) > <span id="last-input">...</span>;</p>
+    <div class="overlayToHide">
+      <p>(LOG) > <span id="last-input"></span></p>
     </div>
-    <div id="last"></div>
-  </div>
-  <div id="overlayLast">
     <div id="last">
       <p id="instructions">[READ ME] Drag the cursor around the screen, move your face from left to right, up and down,
         get closer and move away, create a shape, that just like your fingerprint, is as unique as you.</p>
       <button id="overlay-button" onclick="overlayAction()">Close[A]</button>
     </div>
   </div>
+
 
 
   <!-- Three.js CDN -->

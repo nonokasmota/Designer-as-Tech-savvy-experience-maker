@@ -419,10 +419,13 @@ function getYear() {
 }
 
 function overlayAction() {
-  const overlay = document.getElementById('overlay');
-  overlay.style.display = overlay.style.display === 'none' ? 'block' : 'none';
+  const overlays = document.getElementsByClassName('overlayToHide'); // Access all elements with the class
+  Array.from(overlays).forEach((overlay) => {
+    overlay.style.display = overlay.style.display === 'none' ? 'block' : 'none';
+  });
+
   const overlayButton = document.getElementById('overlay-button');
-  overlayButton.textContent = overlay.style.display === 'none' ? 'Open[A]' : 'Close[A]';
+  overlayButton.textContent = overlays[0].style.display === 'none' ? 'Open[A]' : 'Close[A]';
 }
 
 
