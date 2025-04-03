@@ -1,0 +1,173 @@
+:root {
+    --bg-color: #000000;
+    --dot-color: #ffffff;
+}
+
+@font-face {
+    font-family: 'PPMondwest-Trial';
+    src: url('PPMondwest-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+    /* I DO NOT HAVE THE RIGHTS TO THIS FONT. THIS IS JUST A TRIAL FONT, AND THIS IS A STUDENT PROJECT */
+}
+
+html, body {
+margin: 0;
+padding: 0;
+overflow: hidden !important;
+background-color: var(--bg-color);
+height: 100%;
+overflow: hidden;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    gap: 7px;
+}
+
+#overlay {
+    flex-direction: column;
+    mix-blend-mode: difference;
+    height: 100%;
+    position: fixed;
+}
+
+.small {
+    width:fit-content;
+    gap: 35px;
+}
+
+#three-canvas {
+position: absolute;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+display: block;
+z-index: 1; /* Ensure canvas is below the overlay */
+}
+
+#webcam {
+display: none;
+}
+
+#overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100dvw;
+height: 100dvh;
+z-index: 10; /* Ensure overlay is on top of everything else */
+color: white; /* Make the text white to be visible */
+font-family: Arial, sans-serif;
+padding: 20px;
+box-sizing: border-box;
+}
+
+#overlayLast{
+    position: absolute;
+    bottom: 0;
+    
+    z-index: 10;
+}
+
+
+
+.one-liner {
+    flex-direction: row;
+    gap: 0;
+    width:fit-content;
+}
+
+#overlay p,
+input,
+button {
+border: none;
+outline: none;
+margin: 0;
+padding: 5px;
+font-size: 31px;
+font-family:'PPMondwest-Trial',serif;
+width:fit-content;
+background-color: rgba(255, 255, 255, 0.1);
+padding: 0;
+color: #ffffff;
+}
+
+input {
+    padding-left: 5px;
+    transition: width 0.2s ease-in-out;
+    background-color: transparent;
+    width: 700px; /* Set a minimum width to handle small inputs */
+    display: inline-block;
+    max-width: 90vw; /* Optional: Set a maximum width */
+}
+
+#last {
+    height: 100%;
+    align-items: flex-end;
+}
+
+#last p {
+    max-width: 60%;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+button {
+    color: rgba(255, 255, 255, 0.2);
+    background-color: transparent;
+}
+
+button:hover {
+    color: rgb(255, 255, 255);
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* CSS rules for mobile devices go here */
+    p,
+    #overlay  p,
+    button,
+    input {
+      font-size: 20px; /* Adjust font size for mobile */
+    }
+  
+    #three-canvas {
+      width: 100%; /* Ensure canvas takes up full width */
+      height: auto; /* Adjust height automatically */
+    }
+
+    div {
+        gap:5px;
+        flex-direction: column;
+    }
+
+    .small {
+        gap:5px;
+    }
+
+    #three-canvas {
+        width: 100vw;
+        height: 100dvh; /* Use dvh to fix mobile height */
+    }
+
+    #last {
+        align-items: start;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    #last p {
+        max-width: 100%;
+    }
+
+    button {
+        width: 100%;
+        text-align: right;
+    }
+}
