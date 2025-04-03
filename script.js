@@ -421,7 +421,13 @@ function getYear() {
 function overlayAction() {
   const overlays = document.getElementsByClassName('overlayToHide'); // Access all elements with the class
   Array.from(overlays).forEach((overlay) => {
-    overlay.style.display = overlay.style.display === 'none' ? 'block' : 'none';
+    if (overlay.style.color === 'transparent' && overlay.style.backgroundColor === 'transparent') {
+      overlay.style.color = '';
+      overlay.style.backgroundColor = '';
+    } else {
+      overlay.style.color = 'transparent';
+      overlay.style.backgroundColor = 'transparent';
+    }
   });
 
   const overlayButton = document.getElementById('overlay-button');
