@@ -421,17 +421,15 @@ function getYear() {
 function overlayAction() {
   const overlays = document.getElementsByClassName('overlayToHide'); // Access all elements with the class
   Array.from(overlays).forEach((overlay) => {
-    if (overlay.style.color === 'transparent' && overlay.style.backgroundColor === 'transparent') {
-      overlay.style.color = '';
-      overlay.style.backgroundColor = '';
+    if (overlay.style.display === 'none') {
+      overlay.style.display = '';
     } else {
-      overlay.style.color = 'transparent';
-      overlay.style.backgroundColor = 'transparent';
+      overlay.style.display = 'none';
     }
   });
 
   const overlayButton = document.getElementById('overlay-button');
-  overlayButton.textContent = overlays[0].style.display === 'none' ? 'Open[A]' : 'Close[A]';
+  overlayButton.textContent = overlays[0].style.color === 'none' ? 'Open[A]' : 'Close[A]';
 }
 
 
