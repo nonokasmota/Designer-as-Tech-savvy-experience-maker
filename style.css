@@ -110,16 +110,18 @@ input {
 #last {
     height: 100%;
     align-items: flex-end;
+        
 }
 
 #last p {
     max-width: 60%;
     background-color: transparent;
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.35);
 }
 
+
 button {
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.35);
     background-color: transparent;
 }
 

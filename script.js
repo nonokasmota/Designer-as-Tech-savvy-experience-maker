@@ -133,9 +133,9 @@ faceMesh.onResults(results => {
     const distance = Math.abs(nose.z);
     faceDistance = distance;
     document.getElementById('closeness-level').textContent = `${(faceDistance * 100).toFixed(3)}`;
-    if (distance < 4) {
+    if (distance < 0.04) {
       document.getElementById('good-bad-sight').textContent = 'Good Sight';
-    } else if (distance < 6) {
+    } else if (distance < 0.06) {
       document.getElementById('good-bad-sight').textContent = 'Okay Sight';
     } else {
       document.getElementById('good-bad-sight').textContent = 'Bad Sight';
@@ -230,6 +230,19 @@ function getDeviceType() {
   if (width <= 768) return 'Mobile';
   if (width <= 1024) return 'Tablet';
   return 'Desktop';
+}
+function isViewingOnComputer() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  const isMobile = /android|iphone|ipad|ipod|blackberry|windows phone|opera mini|iemobile/.test(userAgent);
+  return !isMobile; // Returns true if not mobile, meaning it's a computer
+}
+
+function changeTextMobile() {
+  if (!isViewingOnComputer()) {
+    document.getElementById('instructions').textContent = `[READ ME] Tap the screen, move your face from left to right, up and down,
+        get closer and move away, create a shape, that just like your fingerprint, is as unique as you.`;
+
+  }
 }
 
 function displaySystemInfo() {
@@ -367,12 +380,12 @@ function calculateDynamicWPM() {
       const minutesElapsed = elapsedTime / 60; // Convert to minutes
 
       const wpm = minutesElapsed > 0 ? Math.round(wordCount / minutesElapsed) : 0;
-      if (wpm > 500) {
-        document.getElementById('knowledge').textContent = 'Tech Savy';
-      } else if (wpm > 300) {
-        document.getElementById('knowledge').textContent = 'Tech Aware';
+      if (wpm > 300) {
+        document.getElementById('knowledge').textContent = 'Tech_Savy';
       } else if (wpm > 200) {
-        document.getElementById('knowledge').textContent = 'Tech Noob';
+        document.getElementById('knowledge').textContent = 'Tech_Aware';
+      } else {
+        document.getElementById('knowledge').textContent = 'Tech_Noob';
       }
 
       wpmDisplay.textContent = `${wpm}`; // Update WPM display dynamically
@@ -418,6 +431,8 @@ function getYear() {
   return year;
 }
 
+
+
 function overlayAction() {
   const overlays = document.getElementsByClassName('overlayToHide'); // Access all elements with the class
   Array.from(overlays).forEach((overlay) => {
@@ -432,6 +447,7 @@ function overlayAction() {
   overlayButton.textContent = overlays[0].style.display === 'none' ? 'Open[A]' : 'Close[A]';
 }
 
+overlayAction(); // Call the function to set the initial state
 
 function buildDate() {
   text = '';
