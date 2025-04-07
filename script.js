@@ -240,6 +240,7 @@ function changeTextMobile() {
 
   }
 }
+changeTextMobile();
 
 function displaySystemInfo() {
   document.getElementById('os-info').textContent = `${getOS()}`;
