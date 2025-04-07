@@ -431,6 +431,16 @@ function getYear() {
   return year;
 }
 
+function WhenClickA() {
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'a' || event.key === 'A') {
+      overlayAction(); // Call the overlay action function
+    }
+  });
+}
+
+// Call the function to start detecting key A presses
+WhenClickA();
 
 
 function overlayAction() {
