@@ -231,14 +231,10 @@ function getDeviceType() {
   if (width <= 1024) return 'Tablet';
   return 'Desktop';
 }
-function isViewingOnComputer() {
-  const userAgent = navigator.userAgent.toLowerCase();
-  const isMobile = /android|iphone|ipad|ipod|blackberry|windows phone|opera mini|iemobile/.test(userAgent);
-  return !isMobile; // Returns true if not mobile, meaning it's a computer
-}
+
 
 function changeTextMobile() {
-  if (!isViewingOnComputer()) {
+  if (getDeviceType() === 'Mobile') {
     document.getElementById('instructions').textContent = `[READ ME] Tap the screen, move your face from left to right, up and down,
         get closer and move away, create a shape, that just like your fingerprint, is as unique as you.`;
 
